@@ -1,13 +1,13 @@
 pipeline {
   environment {
-    DOCKER_IMAGE  = "pankajs2284/react-app"
+    DOCKER_IMAGE  = "pankajs2284/intellipaat-app"
     IMAGE_TAG = "${env.BUILD_ID}".replaceAll('[^a-zA-Z0-9._-]', '-') // Replace invalid characters
   }
   agent any
   stages {
     stage('Checkout Source') {
       steps {
-        git branch: 'main', url: 'https://github.com/pankajsingh0684/jenkins-kubernetes-deployment.git'
+        git branch: 'main', url: 'https://github.com/pankajsingh0684/jenkins-nginx-k8-deployment.git'
       }
     }
     stage('Build image') {
